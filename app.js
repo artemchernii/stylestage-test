@@ -41,12 +41,8 @@ const clipboardCopy = (text) => navigator.clipboard.writeText(text);
 const randomButton = document.createElement('button');
 randomButton.innerText = 'Button';
 randomButton.setAttribute('id', 'randomButton');
-const saveBody = document.body.innerHTML;
-document.body.innerHTML = '';
 document.body.appendChild(randomButton);
-document.body.innerHTML = document.body.innerHTML + saveBody;
-const randomB = document.querySelector('#randomButton');
-randomB.addEventListener('click', function () {
+document.querySelector('#randomButton').addEventListener('click', function () {
 	console.log('clicked');
 	clipboardCopy('Teresa');
 	this.style.transition = 'all 1s ease';
@@ -54,10 +50,9 @@ randomB.addEventListener('click', function () {
 });
 
 //6. Transition end event
-randomB.addEventListener(
-	'transitionend',
-	() => (randomB.style.display = 'none')
-);
+document
+	.querySelector('#randomButton')
+	.addEventListener('transitionend', () => (randomB.style.display = 'none'));
 
 //7. Console table
 
