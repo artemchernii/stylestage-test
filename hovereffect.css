@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@font-face {
+    font-family: 'GameOfSquids';
+    src: url('./game-of-squids/Game_Of_Squids.ttf');
+}
+:root {
+    --card-color: rgb(23, 23, 23);
+    --bg-color: rgb(20, 20, 20);
+}
+body {
+    background: var(--bg-color);
+    color: #fff;
+    font-family: GameOfSquids, sans-serif;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+#cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 1200px;
+    width: calc(100% - 20px);
+    margin: 0 auto;
+}
+.card {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 260px;
+    width: 300px;
+    border-radius: 10px;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.card::before,
+.card::after {
+    border-radius: inherit;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    transition: opacity 500ms;
+    opacity: 0;
+}
+
+.card::before {
+    background: radial-gradient(
+        800px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.06),
+        transparent 40%
+    );
+    z-index: 3;
+}
+
+.card::after {
+    background: radial-gradient(
+        600px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.4),
+        transparent 40%
+    );
+    z-index: 1;
+}
+
+.card > .card-content {
+    background-color: var(--card-color);
+    height: calc(100% - 2px);
+    width: calc(100% - 2px);
+    border-radius: inherit;
+    margin: 1px;
+    position: relative;
+    z-index: 2;
+}
+.card:hover::before {
+    opacity: 1;
+}
+#cards:hover > .card::after {
+    opacity: 1;
+}
+
+.card .card-content {
+    padding-top: 25px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+.card .card-content .image {
+    width: 120px;
+    height: 120px;
+    background-size: cover;
+    box-shadow: 0px 2px 3px rgba(255, 255, 255, 0.1);
+}
+.card-content .card-content__name {
+    font-size: 24px;
+}
+.card .card-content .button {
+    background: #fff;
+    color: var(--card-color);
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 30px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    z-index: 5;
+    font-size: 18px;
+    z-index: 9999;
+}
+.card .button {
+    position: absolute;
+    bottom: 25px;
+    background: #fff;
+    color: var(--card-color);
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 30px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    z-index: 5;
+    font-size: 18px;
+}
