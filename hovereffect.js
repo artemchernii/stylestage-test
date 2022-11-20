@@ -9,3 +9,5 @@ document.getElementById('cards').addEventListener('mousemove', function (e) {
         card.style.setProperty('--mouse-y', `${y}px`);
     }
 });
+
+// Execution flow of code
