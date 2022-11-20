@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Browser and Events</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --accent: #e45858;
+                --accentBg: #d1d1e9;
+            }
+            * {
+                box-sizing: border-box;
+            }
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                font-size: 16px;
+            }
+            body {
+                font-family: Nunito, sans-serif;
+                background-color: #fffffe;
+                color: #2b2c34;
+                width: 100%;
+                height: 100vh;
+            }
+            main {
+                display: flex;
+                width: 100%;
+                height: 100%;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+            a {
+                display: block;
+                color: #2b2c34;
+                text-decoration: none;
+                width: 10em;
+                height: 2.5em;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 0.5em;
+                background: var(--accentBg);
+                border: none;
+                font-size: 1.5em;
+                font-weight: bold;
+                transition: color 0.2s ease;
+            }
+            a:hover {
+                color: var(--accent);
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1>Browser and Events</h1>
+            <a href="index.html">Home</a>
+            <a href="#" id="change-name">Change name</a>
+        </main>
+        <script src="browserandevents.js"></script>
+    </body>
+</html>
