@@ -44,6 +44,8 @@ changeName.addEventListener('click', onChangeName);
 
 ('use strict');
 
+//Closure practice
+
 function changeBalance() {
     let balance = 0;
     return function (sum) {
@@ -55,3 +57,14 @@ function changeBalance() {
 const change = changeBalance();
 change(20);
 change(40);
+
+//Closure practice
+
+  
+
+
+
+
+
+
+
